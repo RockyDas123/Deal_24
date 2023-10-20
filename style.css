@@ -8,17 +8,11 @@ body, h1, h2, p, ul, li, form {
 body {
     /* font-family: 'Josefin Sans', sans-serif; */
 }
-@media(max-width:1000px){
-    body{
-        width: 50px;
-    }
-}
-@media(max-width:750px){
+@media(max-width:600px){
     body{
         width: 200%;
     }
 }
-
 
 header {
     background-color: #999999;
