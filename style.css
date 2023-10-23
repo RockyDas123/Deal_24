@@ -219,7 +219,7 @@ nav #check{
     .slider {
         margin: 10px 5px;
         left: 10px;
-        height: 200px;
+        height: 150px;
         max-width: 95%; /* Adjust the width as needed for mobile screens */
     }
 }
