@@ -7,11 +7,12 @@ body, h1, h2, p, ul, li, form {
 
 body {
     /* font-family: 'Josefin Sans', sans-serif; */
+  background-color: #ececec;
 }
 
 nav{ /*header*/
     height: 80px;
-    background: #2c3e50;
+    background: #58d688c7;
 }
 nav img{
     width: 150px;
@@ -93,6 +94,7 @@ nav #check{
         font-size: 20px;
     }
     nav #check:checked ~ ul{
+        z-index: 1000;
         left: 0;
     }
     nav #check:checked ~ label #btn{
@@ -105,6 +107,7 @@ nav #check{
 
 
 .image-container {
+    background-color: #fdfdfd;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -136,44 +139,93 @@ nav #check{
 .image-container .image:hover::before {
     transform: scaleY(1);
     }
+@media(max-width: 860px) {
+        .image-container{
+            display: none;
+        }
+}    
 
-#hero {
-    background-image: url('./Great Deal 4U/BG.jpg');
-    background-size: cover;
-    color: #5e5e5e;
-    text-align: center;
-    padding: 100px 0;
+.slider{
+  
+    width: 1250px;
+    max-width: 100vw;
+    height: 300px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
 }
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+.slider .list{
+    position: absolute;
+    width: max-content;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    transition: 1s;
 }
-
-.hero-content h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+.slider .list img{
+    width: 1300px;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
 }
-
-.hero-content p {
-    font-size: 18px;
-    margin-bottom: 30px;
+.slider .buttons{
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
 }
-
-.hero-content .cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #673de6;
+.slider .buttons button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff5;
     color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
+    border: none;
+    font-family: monospace;
     font-weight: bold;
-    font-size: 18px;
 }
-
+.slider .dots{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.slider .dots li{
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.slider .dots li.active{
+    width: 30px;
+}
+@media screen and (max-width: 768px){
+    .slider{
+        height: 400px;
+    }
+}
+@media (max-width: 768px) {
+    .slider {
+        margin: 10px 5px;
+        left: 10px;
+        height: 200px;
+        max-width: 95%; /* Adjust the width as needed for mobile screens */
+    }
+}
 
 .title {
-    background-color:#f9f9f9;
+    background-color:#d8fff3;
     display: flex;
   /* flex-direction: column; */
   align-items: center;
@@ -211,6 +263,7 @@ nav #check{
 }
 
 .gallery{
+    background-color:#e4bdff;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
