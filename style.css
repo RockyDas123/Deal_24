@@ -1,11 +1,16 @@
-body, h1, h2, p, ul, li, form
+/* Reset default browser styles */
+@tailwind base;
+@tailwind components
+@tailwind utilities;
+
+body, h1, h2, p, ul, li, form {
     margin: 0;
     padding: 0;
-    font-family: 'Josefin San
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 body {
-    /* font-family: 'Josefin 
+    /* font-family: 'Josefin Sans', sans-serif; */
   background-color: #ececec;
 }
 header{
@@ -39,7 +44,7 @@ nav ul li a{
     color: white;
     font-size: 18px;
     padding: 5px 0;
-    text-transform: uppercase
+    text-transform: uppercase;
     text-decoration: none;
 }
 nav ul li a:before{
@@ -52,7 +57,7 @@ nav ul li a:before{
     background: white;
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform .4s
+    transition: transform .4s linear;
 }
 nav ul li a:hover:before{
     transform: scaleX(1);
@@ -102,17 +107,17 @@ nav #check{
         z-index: 1000;
         left: 0;
     }
-    nav #check:checked ~ labe
+    nav #check:checked ~ label #btn{
         display: none;
     }
-    nav #check:checked ~ labe
+    nav #check:checked ~ label #cancel{
         display: block;
     }
 }/*header*/
 
 
 .image-container {
-    background-color: #fdfdf
+    background-color: #fdfdfd;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -125,23 +130,23 @@ nav #check{
     height: 35px;  
     border:2px solid#e5daff;
     border-radius:5px;
-    box-shadow: 5px 5px 10px 
-    transition: transform 0.3
+    box-shadow: 5px 5px 10px #888888;
+    transition: transform 0.3s;
   }
 
-.image-container .image::befo
-    background-color: #ff6a0
+.image-container .image::before{
+    background-color: #ff6a00;
     transform: scaleY(0);
-    transform-origin: bottom 
-    transition: transform 0.3
+    transform-origin: bottom center;
+    transition: transform 0.3s;
     opacity: 0.7;
     }
 
-.image-container .image:hover
-   transform: translateY(-5px
+.image-container .image:hover {
+   transform: translateY(-5px);
     }
 
-.image-container .image:hover
+.image-container .image:hover::before {
     transform: scaleY(1);
     }
 @media(max-width: 860px) {
@@ -180,7 +185,7 @@ nav #check{
     left: 5%;
     width: 90%;
     display: flex;
-    justify-content: space-be
+    justify-content: space-between;
 }
 .slider .buttons button{
     width: 50px;
@@ -215,7 +220,7 @@ nav #check{
 .slider .dots li.active{
     width: 30px;
 }
-@media screen and (max-width:
+@media screen and (max-width: 768px){
     .slider{
         height: 400px;
     }
@@ -225,18 +230,18 @@ nav #check{
         margin: 10px 5px;
         left: 10px;
         height: 150px;
-        max-width: 95%; /* Ad
+        max-width: 95%; /* Adjust the width as needed for mobile screens */
     }
 }
 
 .title {
-    background-color:#d8fff3
+    background-color:#d8fff3;
     display: flex;
-  /* flex-direction: column; 
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
-  height: 10vh; /* Centers ve
-  text-align: center; /* Cent
+  height: 10vh; /* Centers vertically on the page */
+  text-align: center; /* Centers text horizontally */
   margin: 0;
   padding: 0;
   } 
@@ -250,8 +255,8 @@ nav #check{
 .title h5{
     font-size: 24px;
   color: #333;
-  /* background-color: #f4f4f
-  /* border: 2px solid #555; 
+  /* background-color: #f4f4f4; */
+  /* border: 2px solid #555; */
   padding: 10px;
   margin: 0;
 }
@@ -268,7 +273,7 @@ nav #check{
 }
 
 .gallery{
-    background-color:#e4bdff
+    background-color:#e4bdff;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -286,20 +291,20 @@ nav #check{
     border-radius: 20px;
     cursor: pointer;
     padding-top: 10px;
-    box-shadow: 0 14px 28px 
-    0 10px 10px rgba(0, 0, 0
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+    0 10px 10px rgba(0, 0, 0, 0.22);
     transition: .4s;
     background: #ffffff;
 }
 
 .content:hover{
-    box-shadow: 0 3px 6px rg
-    0 3px 6px rgba(0, 0, 0, 
-    transform: translate(0px,
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(0px, -8px);
 }
 
 .content img{
-    width: 200px;
+    width: 140px;
     height: 150px;
     text-align: center;
     margin: 0 auto;
@@ -357,8 +362,8 @@ nav #check{
     outline: none;
     cursor: pointer;
     margin-top: 5px;
-    border-bottom-right-radiu
-    border-bottom-left-radius
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .content .buy-1{
@@ -385,7 +390,7 @@ nav #check{
 }
 
 .deal-homepage{
-    background-color:#ffd4d4
+    background-color:#ffd4d4;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -402,8 +407,8 @@ nav #check{
     border-radius: 5px;
     cursor: pointer;
     padding-top: 10px;
-    box-shadow: 0 10px 24px 
-    0 8px 8px rgba(0, 0, 0, 
+    box-shadow: 0 10px 24px rgba(0,0,0,0.25), 
+    0 8px 8px rgba(0, 0, 0, 0.22);
     transition: .4s;
     background: #ffffff;
 }
@@ -418,14 +423,14 @@ nav #check{
     outline: none;
     cursor: pointer;
     margin-top: 5px;
-    border-bottom-right-radiu
-    border-bottom-left-radius
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .container img{
     padding-left: 20px;
-    width: 200px;
-    height: 150px;
+    width: 230px;
+    height: 230px;
     text-align: left;
     margin: 0;
     display: block;
@@ -489,9 +494,9 @@ nav #check{
         width: 40%;
         }
     .container img{
-        padding-left: 0px;
-        width: 150px;
-        height: 120px;
+        padding-left:5px;
+        width: 160px;
+        height: 160px;
         text-align: center;
         margin: 0;
         display: block;
@@ -509,14 +514,14 @@ nav #check{
 
 
 #about {
-    background-color: #559b6
+    background-color: #559b6e;
     color: #fff;
     padding: 80px 0;
     text-align: center;
 }
 
 #contact {
-    background-color: #003e2
+    background-color: #003e2a;
     color: #fff;
     padding: 80px 0;
 }
@@ -541,15 +546,15 @@ nav #check{
     margin-bottom: 20px;
 }
 
-.contact-form input[type="tex
-.contact-form input[type="ema
+.contact-form input[type="text"],
+.contact-form input[type="email"],
 .contact-form textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 .contact-form button {
-    background-color: #ff660
+    background-color: #ff6600;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -565,7 +570,7 @@ nav #check{
 }
 
 footer {
-    background-color: #00000
+    background-color: #000000;
     color: #fff;
     text-align: center;
     padding: 20px 0;
